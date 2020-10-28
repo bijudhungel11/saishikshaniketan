@@ -1,0 +1,166 @@
+.create__btn {
+  right: 0;
+
+  font-size: 2rem !important;
+}
+.form__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__heading {
+  font-weight: bolder;
+}
+.form__label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.star {
+  color: rgb(228, 5, 5);
+}
+.form {
+  height: 100%;
+  background-image: linear-gradient(to right bottom, #c471ed, #4286f4);
+  box-shadow: -1px 2px 30px rgba(0, 0, 0, 0.4), -1px 2px 30px rgba(0, 0, 0, 0.4);
+  width: 60%;
+  border-radius: 5%;
+}
+
+.errors {
+  color: red;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+}
+
+.form__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.heading__student {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
+  border-bottom: 5px solid coral;
+  margin-bottom: 3rem;
+}
+.form__name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form__value {
+  margin: 1.5rem 0rem;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid coral;
+}
+.studentInput,
+.class select {
+  width: 20rem;
+  display: block;
+  padding: 0.2rem;
+  font-weight: bolder !important;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  outline: none;
+}
+.class select option {
+  font-weight: bolder;
+  background-color: #c471ed;
+}
+.class select option:active {
+  color: black;
+}
+/* 
+#c471ed*/
+.form__info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 2rem 0rem;
+  flex-wrap: wrap;
+}
+.form__info h1 {
+  border-bottom: 2px solid black;
+}
+.parents__info {
+  display: flex;
+}
+.father__info {
+  border-right: 1px solid black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.mother__info {
+  padding: 2rem;
+}
+.form__div {
+  margin: 0rem 2rem;
+}
+.form__div label {
+  text-align: center;
+}
+.form__gender {
+  display: flex;
+}
+label {
+  font-size: 1.8rem;
+}
+
+.form__gender div {
+  padding: 0rem 1rem;
+}
+.submit__btn {
+  font-size: 2rem !important;
+  letter-spacing: 2px;
+}
+@media (max-width: 1350px) {
+  .form {
+    width: 60%;
+  }
+}
+@media (max-width: 1200px) {
+  .form {
+    width: 70%;
+  }
+  .student {
+    height: 200vh;
+  }
+}
+@media (max-width: 950px) {
+  .heading__student {
+    text-align: center;
+    border-top-right-radius: 50rem;
+    border-top-left-radius: 50rem;
+  }
+  .form {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 500px) {
+  .form {
+    width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  .parents__info {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .student {
+    height: 250vh;
+  }
+  .father__info {
+    border: none;
+  }
+}
+.class select {
+  width: 20rem;
+}

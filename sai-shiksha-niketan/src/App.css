@@ -1,0 +1,7 @@
+
+.footer__container {
+  position: absolute;
+  height: 20rem;
+  width: 100%;
+  bottom: 0;
+}

@@ -1,0 +1,112 @@
+.student__data {
+  height: 100%;
+}
+.table__container {
+  width: 100% !important;
+}
+.table__header {
+  font-size: 2.4rem;
+  background-color: #f0ad4e;
+}
+.table__body {
+  font-size: 2rem;
+}
+.table__body > tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+}
+.table__body > tr:hover {
+  cursor: pointer;
+}
+.table__body > tr:nth-child(odd):hover {
+  background-color: black;
+}
+.table__body > tr:nth-child(even) {
+  background-color: #f0ac4e63;
+}
+.table__body > tr:nth-child(even):hover {
+  background-color: #f0ac4e9d;
+}
+
+.action-data .btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media (max-width: 880px) {
+  .action-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center !important;
+    height: 14rem;
+  }
+}
+@media (max-width: 750px) {
+  .table__header {
+    font-size: 2rem;
+  }
+  .table__body {
+    font-size: 1.6rem;
+  }
+  .action-data .btn {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .action-data {
+    height: 10rem;
+  }
+}
+@media (max-width: 620px) {
+  .table__header {
+    font-size: 1.6rem;
+  }
+  .table__body {
+    font-size: 1.3rem;
+  }
+  .action-data .btn {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+@media (max-width: 550px) {
+  .table__header {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column !important;
+  }
+  .table__header tr th:last-child {
+    display: none;
+  }
+  .table__body {
+    display: flex;
+    flex-direction: column;
+  }
+  .table__body tr {
+    width: 100%;
+  }
+  .action-data {
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+  }
+}
+@media (max-width: 540px) {
+  .action-data {
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  .action-data button {
+    margin-top: 1rem !important;
+  }
+  .table__body tr {
+    height: 16vh !important;
+  }
+}

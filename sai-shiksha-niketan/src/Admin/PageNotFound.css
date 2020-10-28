@@ -1,0 +1,37 @@
+.pageNotFound {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #cbcbcb;
+  top: 0;
+  left: 0;
+  color: white;
+  background: url("https://cdn.pixabay.com/photo/2020/10/10/14/38/leaves-5643327_960_720.png")
+    center center no-repeat;
+  background-size: cover;
+}
+.pageNotFound div {
+  background-color: coral;
+  padding: 3rem;
+  border-radius: 50%;
+  -webkit-text-stroke: 4px black;
+}
+.pageNotFound div h1 {
+  font-size: 20rem;
+  margin: 0;
+}
+.pageNotFound p {
+  text-align: center;
+  font-size: 3rem;
+}
+.pageNotFound a {
+  margin: -10rem;
+  font-size: 5rem;
+  color: black !important;
+  text-decoration: none;
+  background-color: coral;
+  padding: 2rem;
+}

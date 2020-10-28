@@ -1,0 +1,26 @@
+/* constants for saving the student */
+export const STUDENT_SAVE_REQUEST = "STUDENT_SAVE_REQUEST";
+export const STUDENT_SAVE_SUCCESS = "STUDENT_SAVE_SUCCESS";
+export const STUDENT_SAVE_FAIL = "STUDENT_SAVE_FAIL";
+/* constants for student list */
+export const STUDENT_LIST_REQUEST = "STUDENT_LIST_REQUEST";
+export const STUDENT_LIST_SUCCESS = "STUDENT_LIST_SUCCESS";
+export const STUDENT_LIST_FAIL = "STUDENT_LIST_FAIL";
+/* constants for class student list */
+export const CLASS_STUDENT_LIST_REQUEST = "CLASS_STUDENT_LIST_REQUEST";
+export const CLASS_STUDENT_LIST_SUCCESS = "CLASS_STUDENT_LIST_SUCCESS";
+export const CLASS_STUDENT_LIST_FAIL = "CLASS_STUDENT_LIST_FAIL ";
+/* constants for student */
+export const STUDENT_REQUEST = "STUDENT_REQUEST";
+export const STUDENT_SUCCESS = "STUDENT_SUCCESS";
+export const STUDENT_FAIL = "STUDENT_FAIL ";
+
+/* constants for deleting the student */
+export const DELETE_STUDENT_REQUEST = "DELETE_STUDENT_REQUEST";
+export const DELETE_STUDENT_SUCCESS = "DELETE_STUDENT_SUCCESS";
+export const DELETE_STUDENT_FAIL = "DELETE_STUDENT_FAIL ";
+
+/* for getting the length */
+export const STUDENTS_LENGTH_REQUEST = "STUDENTS_LENGTH_REQUEST";
+export const STUDENTS_LENGTH_SUCCESS = "STUDENTS_LENGTH_SUCCESS";
+export const STUDENTS_LENGTH_FAIL = "STUDENTS_LENGTH_FAIL";

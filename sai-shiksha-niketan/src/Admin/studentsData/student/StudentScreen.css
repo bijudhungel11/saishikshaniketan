@@ -1,0 +1,135 @@
+.loading {
+  font-size: 4rem;
+}
+.studentData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  margin: 2rem auto;
+  box-shadow: -2px 3px 20px rgba(0, 0, 0, 0.3), -2px 3px 20px rgba(0, 0, 0, 0.3);
+}
+.studentData > h1 {
+  font-weight: bolder;
+}
+.studentData__info {
+  flex: 1;
+  display: flex;
+  grid-column: auto;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.studentData__info--main {
+  background-color: #dfccca;
+
+  flex: 1;
+}
+.studentData__info--sub {
+  background-color: #dddada;
+  flex: 1;
+}
+.studentData__info .small__field {
+  margin: 1.5rem;
+  padding: 1rem;
+}
+.studentData__info .small__field label {
+  font-size: 2rem;
+  color: rgb(255, 68, 0);
+  font-weight: bolder;
+}
+.studentData__info .small__field span {
+  margin-left: 1rem;
+  font-size: 1.9rem;
+  color: black;
+}
+.studentParent__info {
+  width: 100%;
+}
+.studentParent__info > h1 {
+  background-color: #f0ad4e;
+  text-align: center;
+  font-weight: bolder;
+}
+.studentParent__info > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.studentParent__info label {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.studentParent__info .smallfield__span {
+  font-size: 1.9rem;
+  margin-left: 1.5rem;
+  padding: 1rem;
+}
+.studentParent__info .fatherInfo {
+  flex: 1;
+  background-color: #dfccca;
+}
+.studentParent__info h2 {
+  text-align: center;
+  border-bottom: 2px solid white;
+  font-weight: bolder;
+  padding: 1rem;
+}
+.studentParent__info label {
+  color: rgb(255, 68, 0);
+}
+.studentParent__info .motherInfo {
+  flex: 1;
+  background-color: #dddada;
+}
+
+.studentParent__info .small__field {
+  margin: 1.5rem;
+  padding: 1rem;
+}
+@media (max-width: 510px) {
+  .studentData__info .small__field label {
+    font-size: 1.4rem;
+  }
+  .studentData__info .small__field span {
+    margin-left: 0.8rem;
+    font-size: 1.2rem;
+    color: black;
+  }
+  .studentData__info .small__field {
+    margin: 1.2rem;
+    padding: 0.4rem;
+  }
+  .studentParent__info .small__field {
+    margin: 1.2rem;
+    padding: 0.4rem;
+  }
+  .studentParent__info label {
+    font-size: 1.4rem;
+    font-weight: bolder;
+  }
+
+  .studentParent__info .smallfield__span {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    padding: 1rem;
+  }
+}
+@media (max-width: 360px) {
+  .studentData__info .small__field label {
+    font-size: 1.2rem;
+  }
+  .studentData__info .small__field span {
+    font-size: 1rem;
+    color: black;
+  }
+
+  .studentParent__info label {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  .studentParent__info .smallfield__span {
+    font-size: 1rem;
+  }
+}

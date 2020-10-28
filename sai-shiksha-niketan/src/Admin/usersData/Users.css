@@ -1,0 +1,12 @@
+.users {
+  height: 100%;
+  background-color: #fff;
+}
+.mini__users {
+  background-color: pink;
+  height: 200vh;
+}
+.mini__users-1 {
+  background-color: coral;
+  height: 100vh;
+}

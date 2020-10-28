@@ -1,0 +1,165 @@
+.sidebar {
+  height: 100%;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  background-color: black;
+  color: white;
+  font-size: 2.4rem;
+  position: fixed;
+
+  backface-visibility: hidden;
+  transition: all 0.6s;
+  z-index: 11;
+  color: black;
+  background-color: aliceblue;
+}
+.sidebar.active {
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.sidebar.open {
+  left: 0;
+}
+.sidebar__header {
+  background-color: #fb6e43;
+  height: 16rem;
+  display: grid;
+  place-items: center;
+  color: black;
+  padding: 1rem 0rem;
+}
+.sidebar__header a {
+  text-decoration: none;
+  transition: all 0.4s;
+}
+.sidebar__header a:active,
+.sidebar__header a:hover {
+  color: white;
+}
+.sidebar__header--img {
+  width: 14rem;
+  border-radius: 50%;
+}
+
+.sidebar__header--title {
+  border-bottom: 0.9rem solid #fff;
+}
+
+.sidebar__header--title a {
+  text-decoration: none;
+  color: black;
+}
+.sidebar__socialMedia {
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3.2rem;
+  list-style-type: none;
+}
+
+.sidebar__socialMedia--item {
+  padding-right: 2rem;
+  text-align: center;
+  color: coral;
+
+  width: 100%;
+}
+
+.sidebar__socialMedia--item:hover,
+.sidebar__socialMedia--item:active {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.sidebar__container {
+  padding: 1rem;
+
+  height: 100%;
+}
+.sidebar__list {
+  list-style-type: none;
+  height: 30rem;
+  padding: 0;
+  overflow: scroll;
+}
+
+.sidebar__list a:last-child {
+  margin-bottom: 20rem;
+}
+.sidebar__list::-webkit-scrollbar {
+  display: none;
+}
+@media (min-height: 700px) {
+  .sidebar__list {
+    height: 50rem;
+  }
+}
+
+@media (min-width: 400px) {
+  .sidebar__list {
+    height: 43rem;
+  }
+}
+
+.sidebar__item {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2.3rem;
+  padding: 2rem 0rem;
+  font-weight: 900;
+  padding-left: 2rem;
+  margin-left: -2rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid coral;
+  border-width: 100%;
+}
+
+.sidebar__item .spanOne {
+  display: block;
+  text-align: center;
+  justify-content: center !important;
+  width: 100%;
+  align-items: center;
+  margin-right: 4rem;
+  font-size: 2.5rem;
+}
+.sidebar__item:hover {
+  background-color: #fb6e43;
+  cursor: pointer;
+  color: black;
+}
+
+/* making the burger icon */
+.burger__iconSidebar {
+  padding: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 11;
+  color: white;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.658);
+}
+
+/* end of the burger icon */
+.sidebar__footer {
+  bottom: 0;
+  text-align: center;
+  background-color: coral;
+  width: 100%;
+  height: 5rem;
+  margin-top: 2rem;
+  position: absolute;
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,221 @@
+.login {
+  position: relative;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 87vh;
+  font-size: 1.8rem;
+  background-color: white;
+}
+.login__container {
+  padding: 4rem;
+  position: relative;
+  height: 80%;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(255, 127, 80, 0.842);
+  box-shadow: -1px 4px 20px -1px rgba(0, 0, 0, 0.911);
+}
+.login__right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-left: 2px solid coral;
+  top: 0;
+  right: 0;
+}
+.login__right img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.login__right .form__name {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form__name h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  -webkit-text-stroke: 3px black;
+  color: white;
+  letter-spacing: 3px;
+  border-bottom: 5px solid coral;
+}
+
+@media (max-width: 660px) {
+  .form__name h1 {
+    font-size: 3.5rem;
+  }
+}
+.login__left {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left__container {
+  background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.322),
+      rgba(255, 255, 255, 0.39)
+    ),
+    url("https://www.bird-wittenbergdental.com/wp-content/uploads/2017/01/top-line-management-login-background-1.jpg")
+      no-repeat center;
+  background-size: cover;
+  color: black;
+}
+.login__left.signup {
+  /*  background-image: linear-gradient(to right bottom, #71a0bc, #feb99f); */
+  background: linear-gradient(to right bottom, #71a0bc57, rgba(0, 0, 0, 0.733)),
+    url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&w=1000&q=80")
+      center center no-repeat;
+  color: wheat;
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem;
+  height: 100%;
+}
+.form__input input::placeholder {
+  color: rgba(0, 0, 0, 0.63);
+}
+.login__form {
+  width: 80%;
+}
+.error__container {
+  position: absolute;
+}
+.error__message {
+  color: red;
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .error__message {
+    font-size: 2rem;
+  }
+}
+.form__input:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.form__input {
+  margin: 0.5rem 0rem;
+  padding: 0.4rem 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form__input label {
+  font-size: 2rem;
+  font-weight: bolder;
+  width: 85%;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.form__input input,
+.form__input select {
+  background-color: rgba(255, 255, 255, 0.342);
+  border: none;
+  border-bottom: 5px solid coral;
+  color: black;
+  border-radius: 5rem;
+  padding: 0.3rem;
+  font-weight: bolder;
+  outline: none;
+}
+.form__input select option {
+  background-color: rgba(255, 127, 80, 0.507);
+  color: black !important;
+  font-weight: bolder;
+}
+.form__input label .error {
+  font-size: 1.8rem;
+  color: red;
+}
+.form__input input {
+  flex: 1.5;
+  width: 90%;
+  align-self: center;
+  outline: none;
+}
+.btn__block {
+  text-align: center;
+}
+.signup__link {
+  text-align: center;
+}
+@media (max-width: 978px) {
+  .login {
+    font-size: 1.4rem;
+    height: 90vh;
+  }
+  .login__left {
+    width: 60%;
+  }
+  .login__right {
+    width: 40%;
+  }
+
+  .form__input label {
+    font-size: 2.2rem;
+  }
+  .form__input {
+    margin: 0.8rem 0rem;
+  }
+  .form__input label .error {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 732px) {
+  .labelName {
+    display: none;
+  }
+  .form__input {
+    margin: 2rem 0rem;
+  }
+}
+@media (max-width: 472px) {
+  .login__right {
+    width: 40%;
+  }
+  .login__left {
+    width: 65%;
+  }
+  .error {
+    font-size: 1rem !important;
+  }
+  .form__input {
+    margin: 2rem 0rem;
+  }
+  .form__input label {
+    font-size: 2rem;
+  }
+  .signup__link {
+    font-size: 1rem;
+  }
+  .form__name h1 {
+    font-size: 2rem;
+    -webkit-text-stroke: 0px black;
+    color: black;
+    left: 0;
+  }
+}

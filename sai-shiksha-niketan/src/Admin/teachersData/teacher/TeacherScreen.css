@@ -1,0 +1,157 @@
+.teacherData__containerMain {
+  display: grid;
+  place-items: center;
+}
+.teacherData__containerMain h1 {
+  font-size: 2.8rem;
+}
+.teacherData__containerMain h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+.teacherData__container {
+  width: 80%;
+  box-shadow: -1px 2px 3rem rgba(0, 0, 0, 0.4), -3px 3px 4rem rgba(0, 0, 0, 0.4);
+}
+.teacherDataP__info {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.teacherDataP__info--1 {
+  flex: 1;
+  background: linear-gradient(to right bottom, #ce796b, rgb(250, 152, 166));
+}
+.teacherDataP__info--1 div {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 2.3rem;
+  flex-wrap: wrap;
+}
+.teacherDataP__info--1 div label {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.teacherDataP__info--1 div span {
+  margin-left: 2rem;
+}
+.teacherDataP__info--2 {
+  flex: 1;
+  background: linear-gradient(to right bottom, #38a3a5, #7cbec3);
+}
+.teacherDataP__info--2 div {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 2.3rem;
+}
+
+.teacherDataP__info--2 div label {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.teacherDataP__info--2 div span {
+  margin-left: 2rem;
+}
+
+.teacherDataOther__info {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.teacherDataOther__info > div {
+  flex: 1;
+}
+.teacherDataOther__info h2 {
+  border-bottom: 1px solid white;
+}
+.teacherDataC__info {
+  background: linear-gradient(to right bottom, #ce796b, rgb(250, 152, 166));
+}
+.teacherDataC__info div {
+  font-size: 2.3rem;
+  padding: 1rem;
+}
+.teacherDataC__info div label {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.teacherDataC__info div span {
+  margin-left: 2rem;
+}
+.teacherDataPost__info {
+  background: linear-gradient(to right bottom, #38a3a5, #7cbec3);
+}
+.teacherDataPost__info div {
+  font-size: 2.3rem;
+  padding: 1rem;
+}
+.classList__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.teacherDataPost__info div label {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+.teacherDataPost__info div span {
+  margin-left: 2rem;
+}
+@media (max-width: 1172px) {
+  .teacherDataOther__info {
+    flex-direction: column;
+  }
+}
+@media (max-width: 975px) {
+  .teacherDataP__info {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .teacherData__container div label {
+    font-size: 2.2rem;
+  }
+  .teacherData__container div span {
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 618px) {
+  .teacherData__containerMain h1 {
+    font-size: 2.4rem;
+  }
+  .teacherData__containerMain h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  .teacherData__container div label {
+    font-size: 2rem;
+  }
+  .teacherData__container div span {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 570px) {
+  .teacherData__container div label {
+    font-size: 1.6rem;
+  }
+  .teacherData__container div span {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 376px) {
+  .teacherData__containerMain h1 {
+    font-size: 2rem;
+  }
+  .teacherData__containerMain h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .teacherData__container div label {
+    font-size: 1.3rem;
+  }
+  .teacherData__container div span {
+    font-size: 1.1rem;
+    margin-left: 0rem;
+  }
+}

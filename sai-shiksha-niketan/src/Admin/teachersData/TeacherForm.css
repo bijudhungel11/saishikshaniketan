@@ -1,0 +1,181 @@
+.main__btn {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-left: 1rem;
+}
+.teacherForm__container {
+  display: grid;
+  place-items: center;
+
+  height: 100%;
+}
+.teacherForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #8d7474;
+  border-radius: 2rem;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: -1px 2px 30px rgba(0, 0, 0, 0.4), -1px 2px 30px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to right bottom, #c471ed, #4286f4);
+}
+.teacherForm input {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  outline: none;
+  padding: 0.3rem;
+  border-radius: 3rem;
+}
+@media (max-width: 768px) {
+  .teacherForm {
+    width: 75%;
+  }
+}
+@media (max-width: 600px) {
+  .teacherPersonalInfo {
+    flex-direction: column;
+  }
+  .teacherPersonalInfo--1 {
+    border-right: none !important;
+  }
+}
+@media (max-width: 400px) {
+  .teacherForm {
+    width: 105%;
+  }
+}
+.teacherForm .teacherForm__label {
+  margin: 0.5rem 0rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.teacherForm .teacherForm__label span:first-child {
+  flex: 1;
+  text-align: center;
+}
+.teacherForm .teacherForm__label .star {
+  margin-right: 1.3rem;
+}
+.teacherForm h1 {
+  font-weight: bolder;
+}
+.teacherForm label {
+  font-weight: 600;
+}
+.teacherForm > h1 {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.teacherPersonalInfo {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #ffc101;
+  justify-content: space-between;
+}
+.teacherPersonalInfo--1 {
+  flex: 1;
+  border-right: 2px solid black;
+}
+.teacherPersonalInfo--1 .teacherForm__div {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.teacherPersonalInfo--1 .teacherForm__div .teacherForm__input {
+  width: 80%;
+  align-self: center;
+}
+.teacherPersonalInfo--2 {
+  flex: 1;
+}
+.teacherPersonalInfo--2 .teacherForm__div {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.teacherPersonalInfo--2 .teacherForm__div:last-child {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.teacherPersonalInfo--2 .teacherForm__div .teacherForm__input {
+  width: 80%;
+  align-self: center;
+}
+.teacherFacultyInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  .teacherFacultyInfo {
+    flex-direction: column;
+  }
+  .teacherFacultyInfo__part--1 {
+    border-right: none !important;
+    margin-bottom: 1rem;
+  }
+}
+.teacherFacultyInfo__part--1 {
+  flex: 1;
+  border-right: 2px solid black;
+}
+.teacherFacultyInfo__part--1 .teacherForm__div {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  justify-self: center;
+}
+.teacherFacultyInfo__part--1 .teacherForm__div .teacherForm__input {
+  width: 80%;
+  align-self: center;
+}
+.teacherFacultyInfo__part--2 {
+  flex: 1;
+}
+.teacherFacultyInfo__part--2 .teacherForm__div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+.teacherFacultyInfo__part--2 .teacherForm__div:first-child div {
+  display: flex;
+
+  margin: 3rem 0rem;
+}
+.teacherFacultyInfo__part--2 .teacherForm__div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.teacherFacultyInfo__part--2 .teacherForm__div:last-child .teacherForm__input {
+  width: 80%;
+  align-self: center;
+}
+.classesList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.classesList div {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.classList div .teacherForm__input {
+  text-align: center;
+}
+
+.btn__container {
+  margin-top: 2rem;
+  border-top: 2px solid #ffc101;
+  width: 100%;
+}
+.btn__container button {
+  font-size: 2rem;
+}

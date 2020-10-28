@@ -1,0 +1,114 @@
+.slider {
+  height: 88vh;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -2px 3px 30px rgba(0, 0, 0, 0.774),
+    -2px 3px 40px rgba(0, 0, 0, 0.739);
+  border-radius: 5.9rem;
+}
+.slide {
+  min-width: 100%;
+
+  font-size: 4rem;
+  transition: all 0.5s;
+}
+.slide:hover {
+  cursor: pointer;
+}
+
+.slide.active {
+  transition: none;
+}
+.slider button {
+  position: absolute;
+  top: 50%;
+  font-size: 6rem;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: 20%;
+  background-color: rgba(255, 127, 80, 0.418);
+  transition: all 0.4s;
+  border: none;
+  outline: none !important;
+  color: rgba(255, 255, 255, 0.418);
+}
+.slider button:active {
+  outline: none;
+  border: none;
+}
+.slider button:hover {
+  background-color: coral;
+  color: white;
+}
+#goLeft {
+  left: 4%;
+}
+#goRight {
+  right: 5%;
+}
+.goLeft {
+  left: 1%;
+}
+.goRight {
+  right: 1%;
+}
+.dot-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.dot {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 1.8rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+}
+.dot.active {
+  background-color: coral;
+}
+.dot:hover {
+  cursor: pointer;
+}
+@media (max-width: 830px) {
+  .dot {
+    margin: 1rem;
+    height: 1rem;
+    width: 1rem;
+  }
+  .pause-button {
+    top: 95% !important;
+  }
+}
+@media (max-width: 510px) {
+  .dot {
+    margin: 0.2rem;
+    height: 1rem;
+    width: 1rem;
+  }
+}
+.pause-button {
+  height: 5rem;
+  width: 5rem;
+  background-color: coral;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -92%);
+  cursor: pointer;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 900 !important;
+  color: white;
+}

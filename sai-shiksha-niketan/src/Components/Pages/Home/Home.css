@@ -1,0 +1,15 @@
+.home {
+  margin-bottom: 100rem;
+}
+.slider__container {
+  background-color: rgb(253, 136, 93);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px 3px 30px rgba(0, 0, 0, 0.774),
+    -2px 3px 40px rgba(0, 0, 0, 0.739);
+}
+.slider__container.sticky {
+  background-color: #fff !important;
+}
