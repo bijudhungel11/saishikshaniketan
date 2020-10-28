@@ -4,7 +4,7 @@ import "./CreatePosts.css";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { createPostAction } from "../../redux/actions/postsAction";
-
+import "./CreatePosts.css";
 const CreatePosts = () => {
   const userLogin = useSelector((state) => state.userLogin);
 
@@ -41,58 +41,66 @@ const CreatePosts = () => {
   return (
     <div className="createpost__form">
       <form className="post__form" onSubmit={handleSubmit(onSubmitHandler)}>
-        <div className="post__div">
-          <label htmlFor="heading" className="post__label">
-            Heading
-          </label>
-          <input
-            type="text"
-            className="post__input"
-            id="heading"
-            name="heading"
-            ref={register({
-              required: "Required",
-            })}
-          />
-          <p className="errors">{errors.heading && errors.heading.message}</p>
-        </div>
-        <div className="post__div">
-          <label htmlFor="image" className="post__label">
-            Image
-          </label>
-          <input
-            type="file"
-            className="post__input"
-            id="image"
-            name="image"
-            onChange={handleChange}
-            ref={register({
-              required: "Required",
-            })}
-          />
-          <p className="errors">{errors.image && errors.image.message}</p>
-        </div>
-        <div className="post__div">
-          <label htmlFor="description" className="post__label">
-            Description
-          </label>
-          <textarea
-            type="text"
-            rows="5"
-            cols="50"
-            className="post__input"
-            id="description"
-            name="description"
-            ref={register({
-              required: "Required",
-            })}
-          />
-          <p className="errors">
-            {errors.description && errors.description.message}
-          </p>
-        </div>
-        <div>
-          <button className="btn-success btn btn-lg">Post</button>
+        <h1 className="m-0 text-center bg-warning p-0">Create Posts</h1>
+        <div className="post__body">
+          <div className="post__div">
+            <label htmlFor="heading" className="post__label">
+              Heading
+            </label>
+            <input
+              type="text"
+              className="post__input"
+              id="heading"
+              name="heading"
+              ref={register({
+                required: "Required",
+              })}
+            />
+            <p className="errors">{errors.heading && errors.heading.message}</p>
+          </div>
+          <div className="post__div">
+            <label htmlFor="image" className="post__label">
+              Image
+            </label>
+            <input
+              type="file"
+              className="post__input image__upload"
+              id="image"
+              name="image"
+              onChange={handleChange}
+              ref={register({
+                required: "Required",
+              })}
+            />
+            <p className="errors">{errors.image && errors.image.message}</p>
+          </div>
+          <div className="post__div">
+            <label htmlFor="description" className="post__label">
+              Description
+            </label>
+            <textarea
+              type="text"
+              rows="5"
+              cols="50"
+              className="post__input"
+              id="description"
+              name="description"
+              ref={register({
+                required: "Required",
+              })}
+            />
+            <p className="errors">
+              {errors.description && errors.description.message}
+            </p>
+          </div>
+          <div className="text-center">
+            <button
+              className="post__btn btn-success btn btn-lg font-weight-bolder"
+              type="submit"
+            >
+              Post
+            </button>
+          </div>
         </div>
       </form>
     </div>
