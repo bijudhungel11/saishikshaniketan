@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Post.css";
 
 const Post = ({ id, heading, description, image, user, time, view }) => {
@@ -26,12 +27,26 @@ const Post = ({ id, heading, description, image, user, time, view }) => {
       }
       <div className="post__action">
         {view ? (
-          <button className="btn-success btn btn-lg">View</button>
+          <div className="text-center ">
+            <Link
+              to={`/viewposts/${id}`}
+              className="btn-success btn btn-lg d-block"
+            >
+              View
+            </Link>
+          </div>
         ) : (
           <>
             <button className="btn-warning btn btn-lg">Edit</button>
             <button className="btn-danger btn btn-lg">Delete</button>
-            <button className="btn-success btn btn-lg">View</button>
+            <div>
+              <Link
+                to={`/viewposts/${id}`}
+                className="btn-success btn btn-lg d-block"
+              >
+                View
+              </Link>
+            </div>
           </>
         )}
       </div>

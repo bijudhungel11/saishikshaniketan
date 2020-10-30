@@ -41,7 +41,7 @@ function App(props) {
             <Header />
 
             <Switch>
-              <Route exact path="/" exact={true} component={Home} />
+              <Route path="/" exact={true} component={Home} />
               <Route exact path="/services" component={Services} />
               <Route exact path="/achievements" component={Achievements} />
               <Route exact path="/galleries" component={Galleries} />

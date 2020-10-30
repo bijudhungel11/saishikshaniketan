@@ -5,6 +5,15 @@ import {
   POSTS_LIST_REQUEST,
   POSTS_LIST_SUCCESS,
   POSTS_LIST_FAIL,
+  POST_DATA_REQUEST,
+  POST_DATA_SUCCESS,
+  POST_DATA_FAIL,
+  POST_COMMENT_REQUEST,
+  POST_COMMENT_SUCCESS,
+  POST_COMMENT_FAIL,
+  GET_POST_COMMENTS_REQUEST,
+  GET_POST_COMMENTS_SUCCESS,
+  GET_POST_COMMENTS_FAIL,
 } from "../constants/postConstants";
 function createPostReducers(state = { post: {} }, action) {
   switch (action.type) {
@@ -16,6 +25,7 @@ function createPostReducers(state = { post: {} }, action) {
       return {
         loading: false,
         post: action.payload,
+        success: true,
       };
     case CREATE_POST_FAIL:
       return {
@@ -47,5 +57,75 @@ function postsListReducers(state = { posts: [] }, action) {
       return state;
   }
 }
+function postDataReducers(state = { post: {} }, action) {
+  switch (action.type) {
+    case POST_DATA_REQUEST:
+      return {
+        loading: true,
+      };
+    case POST_DATA_SUCCESS:
+      return {
+        loading: false,
+        post: action.payload,
+      };
+    case POST_DATA_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+}
+function commentPostReducers(state = { commentValue: [] }, action) {
+  switch (action.type) {
+    case POST_COMMENT_REQUEST:
+      return {
+        success: true,
+        loading: false,
+      };
+    case POST_COMMENT_SUCCESS:
+      return {
+        loading: false,
+        commentValue: action.payload,
+        success: true,
+      };
+    case POST_COMMENT_FAIL:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+}
+function gettingCommentsReducers(state = { comments: [] }, action) {
+  switch (action.type) {
+    case GET_POST_COMMENTS_REQUEST:
+      return {
+        loading: false,
+      };
+    case GET_POST_COMMENTS_SUCCESS:
+      return {
+        loading: false,
+        comments: action.payload,
+        success: true,
+      };
+    case GET_POST_COMMENTS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+}
 
-export { createPostReducers, postsListReducers };
+export {
+  createPostReducers,
+  postsListReducers,
+  postDataReducers,
+  commentPostReducers,
+  gettingCommentsReducers,
+};

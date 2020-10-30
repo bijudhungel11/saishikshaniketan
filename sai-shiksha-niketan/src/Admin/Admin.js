@@ -32,6 +32,7 @@ import EditStudents from "./studentsData/editStudent/EditStudents";
 import ManagePosts from "./posts/ManagePosts";
 import CreatePosts from "./posts/CreatePosts";
 import ViewPosts from "./posts/ViewPosts";
+import ViewPost from "./posts/ViewPost";
 const Admin = () => {
   const [toggle, setToggle] = useState(true);
 
@@ -91,6 +92,7 @@ const Admin = () => {
               <Route exact component={Posts} path="/posts" />
               <Route exact component={CreatePosts} path="/createnewposts" />
               <Route exact component={ViewPosts} path="/viewposts" />
+              <Route exact path="/viewposts/:id" component={ViewPost} />
               {/* end */}
               <Route component={PageNotFound} />
             </Switch>

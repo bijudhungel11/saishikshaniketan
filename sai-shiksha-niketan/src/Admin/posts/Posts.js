@@ -12,10 +12,16 @@ const Posts = (props) => {
   const dispatch = useDispatch();
   const { loading, error, posts } = postsList;
 
+  console.log(posts);
   useEffect(() => {
     dispatch(postsListAction());
   }, []);
   console.log(posts);
+  const sortedPosts = posts?.sort(
+    (a, b) => new Date(b.time) - new Date(a.time)
+  );
+  console.log(sortedPosts);
+
   return (
     <>
       {loading ? (
@@ -31,7 +37,7 @@ const Posts = (props) => {
         <p className="error">{error}</p>
       ) : (
         <div className="posts__container">
-          {posts?.map((post) => (
+          {sortedPosts?.map((post) => (
             <Post
               id={post._id}
               heading={post.heading}
