@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
-const commentsSchema = mongoose.Schema(
-  {
-    name: { type: String, required: true },
-    comment: { type: String, required: true },
+const commentsSchema = mongoose.Schema({
+  name: { type: String, required: true },
+  comment: { type: String, required: true },
+  timestamps: {
+    type: String,
+    required: true,
   },
-  {
-    timestamps: true,
-  }
-);
+});
 const postSchema = mongoose.Schema({
   heading: {
     type: String,

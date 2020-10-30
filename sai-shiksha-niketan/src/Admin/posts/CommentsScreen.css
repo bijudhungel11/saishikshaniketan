@@ -1,0 +1,25 @@
+.one__comment {
+  padding: 2rem;
+  border: 1px solid coral;
+  box-shadow: -1px 2px 20px rgba(0, 0, 0, 0.3), -1px 2px 20px rgba(0, 0, 0, 0.5);
+  background: #fdd601;
+  font-size: 1.4rem;
+  width: 80%;
+  margin: 3rem auto;
+  border-radius: 4rem;
+}
+.user__name {
+  font-weight: bolder;
+}
+.user__timeStamps {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 400px) {
+  .one__comment {
+    font-size: 0.9rem;
+  }
+  .user__timeStamps {
+    font-size: 0.8rem;
+  }
+}

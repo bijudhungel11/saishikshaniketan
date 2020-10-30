@@ -26,7 +26,10 @@ import {
   teacherslengthReducers,
 } from "./reducers/teacherReducers";
 import {
+  commentPostReducers,
   createPostReducers,
+  gettingCommentsReducers,
+  postDataReducers,
   postsListReducers,
 } from "./reducers/postsReducers";
 const userInfo = Cookie.getJSON("userInfo") || {};
@@ -58,6 +61,9 @@ const reducer = combineReducers({
 
   createPost: createPostReducers,
   postsList: postsListReducers,
+  postData: postDataReducers,
+  postComments: commentPostReducers,
+  gettingComments: gettingCommentsReducers,
 });
 
 /* to make the redux dev tools works */
