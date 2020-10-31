@@ -17,12 +17,11 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 router.post("/", async (req, res) => {
-  console.log("hello");
-  console.log(req.body);
   const post = new Post({
     heading: req.body.heading,
     description: req.body.description,
     image: req.body.imgUrl,
+
     user: req.body.user,
     time: new Date(),
   });
@@ -86,6 +85,48 @@ router.get("/comments/:id", async (req, res) => {
   } else {
     res.send({
       message: "Error on getting the comments",
+    });
+  }
+});
+
+router.put("/editpost/:id", async (req, res) => {
+  const postId = req.params.id;
+  const post = await Post.findById(postId);
+
+  if (post) {
+    post.heading = req.body.heading;
+    post.description = req.body.description;
+    post.user = req.body.user;
+
+    post.image = req.body.imgUrl;
+
+    const updatedPost = await post.save();
+    if (updatedPost) {
+      return res.status(200).send({
+        message: "Successfully post updated",
+        data: updatedPost,
+      });
+    }
+    return res.status(500).send({
+      message: "Error on updating the post",
+    });
+  }
+  return res.status(404).send({
+    message: "No such post you are trying to updaated",
+  });
+});
+
+router.delete("/:id", async (req, res) => {
+  const postId = req.params.id;
+
+  const deletePost = await Post.findById(postId);
+
+  if (deletePost) {
+    await deletePost.remove();
+    res.send({ message: "Post Is deleted" });
+  } else {
+    res.send({
+      message: "Error on deleting the post",
     });
   }
 });

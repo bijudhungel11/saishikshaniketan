@@ -8,6 +8,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -2px 4px 16px rgba(0, 0, 0, 0.7), -3px 1px 4px rgba(0, 0, 0, 0.7);
   margin: 2rem 0.5rem;
+  transition: 0.4s all;
 }
 .main__card:hover {
   box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.7), -3px 3px 12px rgba(0, 0, 0, 0.7);

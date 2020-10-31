@@ -7,14 +7,14 @@ import { createPostAction } from "../../redux/actions/postsAction";
 import "./CreatePosts.css";
 import { useEffect } from "react";
 import ClockLoader from "react-spinners/ClockLoader";
-const CreatePosts = () => {
+const CreatePosts = ({ title, view, postData, id }) => {
   const userLogin = useSelector((state) => state.userLogin);
 
   const { userInfo } = userLogin;
   console.log(userInfo);
   const { register, handleSubmit, errors, reset } = useForm();
 
-  const [imgUrl, setImgUrl] = useState();
+  const [imgUrl, setImgUrl] = useState("");
 
   /* if will help to respose back the image url from the uploadsrouter */
   const [file, setFile] = useState();
@@ -48,16 +48,24 @@ const CreatePosts = () => {
   const dispatch = useDispatch();
   const onSubmitHandler = (data) => {
     console.log(data, imgUrl, userInfo);
-    dispatch(createPostAction(data, imgUrl, userInfo));
+    dispatch(createPostAction(data, imgUrl, userInfo, id, file));
   };
-
+  console.log(postData);
   useEffect(() => {
     if (success) {
       reset({
         heading: "",
       });
+    } else if (postData) {
+      reset({
+        heading: postData.heading,
+        description: postData.description,
+      });
+      setImgUrl(postData.image);
     }
   }, [success]);
+
+  console.log(postData);
   return (
     <div className="createpost__form">
       <form className="post__form" onSubmit={handleSubmit(onSubmitHandler)}>
@@ -71,6 +79,8 @@ const CreatePosts = () => {
             />
           ) : createPostError ? (
             <p className="error">{createPostError.message}</p>
+          ) : title ? (
+            <>{title}</>
           ) : (
             "Create Posts"
           )}
@@ -101,10 +111,25 @@ const CreatePosts = () => {
               id="image"
               name="image"
               onChange={handleChange}
-              ref={register({
-                required: "Required",
-              })}
+              ref={
+                postData
+                  ? register
+                  : register({
+                      required: "Required",
+                    })
+              }
             />
+            {postData ? (
+              <input
+                type="text"
+                className="post__input image__upload"
+                id="image"
+                onChange={() => setImgUrl(imgUrl)}
+                value={imgUrl}
+              />
+            ) : (
+              <></>
+            )}
             <p className="errors">{errors.image && errors.image.message}</p>
           </div>
           <div className="post__div">
@@ -128,10 +153,12 @@ const CreatePosts = () => {
           </div>
           <div className="text-center">
             <button
-              className="post__btn btn-success btn btn-lg font-weight-bolder"
+              className={`post__btn ${
+                view ? "btn-warning" : "btn-success"
+              } btn btn-lg font-weight-bolder `}
               type="submit"
             >
-              Post
+              {view ? "Update" : "Post"}
             </button>
           </div>
         </div>
