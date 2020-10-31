@@ -1,0 +1,59 @@
+.deleteOverlay__container {
+  height: 100vh;
+  position: fixed;
+  color: white;
+  background-color: #e2ae3f48;
+  top: 50%;
+  width: 100vw !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 111111 !important;
+}
+
+.deleteOverlay {
+  z-index: 1111111 !important;
+  height: 40vh;
+  position: fixed;
+  color: white;
+  background-image: linear-gradient(to right bottom, #c471ed, #4286f4);
+  top: 50%;
+  width: 30vw !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4rem;
+  box-shadow: -1px 2px 15px rgba(0, 0, 0, 0.4), -1px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 700px) {
+  .deleteOverlay {
+    width: 50vw !important;
+  }
+}
+
+.deleteOverlay button {
+  font-size: 2rem;
+  border-radius: 2rem;
+  box-shadow: -1px 2px 15px rgba(0, 0, 0, 0.4), -1px 2px 15px rgba(0, 0, 0, 0.4);
+}
+.deleteOverlay .deleteButton {
+  flex: 1;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.deleteOverlay .cancelButton {
+  width: 100%;
+  text-align: center;
+}
+.deleteOverlay .cancelButton button {
+  width: 90%;
+}

@@ -14,6 +14,9 @@ import {
   GET_POST_COMMENTS_REQUEST,
   GET_POST_COMMENTS_SUCCESS,
   GET_POST_COMMENTS_FAIL,
+  DELETE_POST_REQUEST,
+  DELETE_POST_SUCCESS,
+  DELETE_POST_FAIL,
 } from "../constants/postConstants";
 function createPostReducers(state = { post: {} }, action) {
   switch (action.type) {
@@ -121,6 +124,27 @@ function gettingCommentsReducers(state = { comments: [] }, action) {
       return state;
   }
 }
+function deletePostReducers(state = { post: {} }, action) {
+  switch (action.type) {
+    case DELETE_POST_REQUEST:
+      return {
+        loading: false,
+      };
+    case DELETE_POST_SUCCESS:
+      return {
+        loading: false,
+        post: action.payload,
+        success: true,
+      };
+    case DELETE_POST_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+}
 
 export {
   createPostReducers,
@@ -128,4 +152,5 @@ export {
   postDataReducers,
   commentPostReducers,
   gettingCommentsReducers,
+  deletePostReducers,
 };

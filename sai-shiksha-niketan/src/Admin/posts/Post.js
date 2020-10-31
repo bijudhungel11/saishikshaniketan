@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { deletePostAction } from "../../redux/actions/postsAction";
+import DeleteOverlay from "./DeleteOverlay";
 import "./Post.css";
 
 const Post = ({ id, heading, description, image, user, time, view }) => {
   console.log(image);
+  console.log(id);
+  const [overlay, setOverlay] = useState(false);
+  const dispatch = useDispatch();
+  const deleteHandler = (id) => {
+    setOverlay(true);
+  };
+
+  const overlayClickHandler = () => {
+    setOverlay(false);
+  };
+
+  const onDeleteHandler = (id) => {
+    dispatch(deletePostAction(id));
+  };
 
   return (
-    <div className="post__container">
+    <div className="post__container ">
       <div className="post__user">
         <img src={`http://localhost:5000/uploads/${image}`} alt="user" />
         <strong>
@@ -37,8 +54,15 @@ const Post = ({ id, heading, description, image, user, time, view }) => {
           </div>
         ) : (
           <>
-            <button className="btn-warning btn btn-lg">Edit</button>
-            <button className="btn-danger btn btn-lg">Delete</button>
+            <Link to={`/editpost/${id}`} className="btn-warning btn btn-lg">
+              Edit
+            </Link>
+            <button
+              onClick={() => deleteHandler(id)}
+              className="btn-danger btn btn-lg"
+            >
+              Delete
+            </button>
             <div>
               <Link
                 to={`/viewposts/${id}`}
@@ -50,6 +74,16 @@ const Post = ({ id, heading, description, image, user, time, view }) => {
           </>
         )}
       </div>
+      {overlay ? (
+        <>
+          <DeleteOverlay
+            onDelete={() => onDeleteHandler(id)}
+            onOverlayClick={overlayClickHandler}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

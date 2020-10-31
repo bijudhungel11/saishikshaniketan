@@ -28,6 +28,7 @@ import {
 import {
   commentPostReducers,
   createPostReducers,
+  deletePostReducers,
   gettingCommentsReducers,
   postDataReducers,
   postsListReducers,
@@ -64,6 +65,7 @@ const reducer = combineReducers({
   postData: postDataReducers,
   postComments: commentPostReducers,
   gettingComments: gettingCommentsReducers,
+  deletePost: deletePostReducers,
 });
 
 /* to make the redux dev tools works */

@@ -15,25 +15,44 @@ import {
   GET_POST_COMMENTS_REQUEST,
   GET_POST_COMMENTS_SUCCESS,
   GET_POST_COMMENTS_FAIL,
+  DELETE_POST_REQUEST,
+  DELETE_POST_SUCCESS,
+  DELETE_POST_FAIL,
 } from "../constants/postConstants";
-const createPostAction = ({ heading, description }, imgUrl, { name }) => async (
-  dispatch
-) => {
+const createPostAction = (
+  { heading, description },
+  imgUrl,
+  { name },
+  id
+) => async (dispatch) => {
   dispatch({
     type: CREATE_POST_REQUEST,
   });
   try {
-    const { data } = await axios.post("/api/ssnposts", {
-      heading,
-      description,
-      imgUrl,
-      user: name,
-    });
+    if (!id) {
+      const { data } = await axios.post("/api/ssnposts", {
+        heading,
+        description,
+        imgUrl,
+        user: name,
+      });
 
-    dispatch({
-      type: CREATE_POST_SUCCESS,
-      payload: data,
-    });
+      dispatch({
+        type: CREATE_POST_SUCCESS,
+        payload: data,
+      });
+    } else {
+      const { data } = await axios.put("/api/ssnposts/editpost/" + id, {
+        heading,
+        description,
+        imgUrl,
+        user: name,
+      });
+      dispatch({
+        type: CREATE_POST_SUCCESS,
+        payload: data,
+      });
+    }
   } catch (error) {
     dispatch({
       type: CREATE_POST_FAIL,
@@ -120,10 +139,30 @@ const gettingCommentAction = (id) => async (dispatch) => {
     });
   }
 };
+
+const deletePostAction = (id) => async (dispatch) => {
+  dispatch({
+    type: DELETE_POST_REQUEST,
+  });
+  try {
+    const { data } = await axios.delete("/api/ssnposts/" + id);
+
+    dispatch({
+      type: DELETE_POST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_POST_FAIL,
+      payload: error.message,
+    });
+  }
+};
 export {
   createPostAction,
   postsListAction,
   postDataAction,
   postCommentAction,
   gettingCommentAction,
+  deletePostAction,
 };

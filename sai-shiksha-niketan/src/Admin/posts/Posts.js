@@ -12,15 +12,13 @@ const Posts = (props) => {
   const dispatch = useDispatch();
   const { loading, error, posts } = postsList;
 
-  console.log(posts);
   useEffect(() => {
     dispatch(postsListAction());
   }, []);
-  console.log(posts);
+
   const sortedPosts = posts?.sort(
     (a, b) => new Date(b.time) - new Date(a.time)
   );
-  console.log(sortedPosts);
 
   return (
     <>
