@@ -133,19 +133,19 @@ const ViewPost = () => {
             </button>
           </div>
 
-          {commentShow ? (
-            <div className="comments__container">
-              {loading ? (
-                <h1>Postting Comment</h1>
-              ) : commentError ? (
-                <p className="error">{commentError}</p>
-              ) : (
-                <CommentsScreen id={params.id} comments={comments} />
-              )}
-            </div>
-          ) : (
-            <></>
-          )}
+          <div className={`comments__container ${commentShow ? "active" : ""}`}>
+            {loading ? (
+              <h1>Postting Comment</h1>
+            ) : commentError ? (
+              <p className="error">{commentError}</p>
+            ) : (
+              <CommentsScreen
+                commentDisplay={commentShow}
+                id={params.id}
+                comments={comments}
+              />
+            )}
+          </div>
         </>
       )}
     </>
