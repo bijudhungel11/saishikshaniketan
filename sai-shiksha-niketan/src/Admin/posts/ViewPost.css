@@ -55,6 +55,14 @@
     width: 130%;
   }
 }
+
+.comments__container {
+  opacity: 0;
+  transition: 0.5s all;
+}
+.comments__container.active {
+  opacity: 1;
+}
 .comment__show {
   cursor: pointer;
   font-size: 2rem !important;
