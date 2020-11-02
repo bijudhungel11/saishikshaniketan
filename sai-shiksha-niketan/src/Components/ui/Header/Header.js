@@ -44,7 +44,11 @@ const Header = () => {
       }
     }
   }
+  const [index, setIndex] = useState(null);
 
+  const headerIndexHanlder = (i) => {
+    setIndex(i);
+  };
   const toggleHandler = () => {
     setToggle(!toggle);
   };
@@ -72,37 +76,73 @@ const Header = () => {
           </div>
 
           <ul className="header__list">
-            <Link to="/" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/"
+              className={`header__item ${stickyClass} ${
+                index === 1 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(1)}
+            >
               <span>
                 <AiOutlineHome />
               </span>
               Home
             </Link>
-            <Link to="/services" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/services"
+              className={`header__item ${stickyClass} ${
+                index === 2 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(2)}
+            >
               <span>
                 <GrServices />
               </span>
               Services
             </Link>
-            <Link to="/achievements" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/achievements"
+              className={`header__item ${stickyClass} ${
+                index === 3 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(3)}
+            >
               <span>
                 <GrAchievement />
               </span>
               Achievements
             </Link>
-            <Link to="/galleries" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/galleries"
+              className={`header__item ${stickyClass} ${
+                index === 4 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(4)}
+            >
               <span>
                 <GrGallery />
               </span>{" "}
               Galleries
             </Link>
-            <Link to="/aboutus" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/aboutus"
+              className={`header__item ${stickyClass} ${
+                index === 5 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(5)}
+            >
               <span>
                 <FcAbout />
               </span>
               AboutUS
             </Link>
-            <Link to="/login" className={`header__item ${stickyClass}`}>
+            <Link
+              to="/login"
+              className={`header__item ${stickyClass} ${
+                index === 6 ? "active" : ""
+              }`}
+              onClick={() => headerIndexHanlder(6)}
+            >
               <span>
                 <FiLogIn />
               </span>
