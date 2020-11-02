@@ -164,3 +164,12 @@ label {
 .class select {
   width: 20rem;
 }
+.viewStudent__header--main {
+  border: 2px dashed black;
+  background-image: linear-gradient(to right bottom, #c471ed, #4286f4);
+}
+.viewStudent__header {
+  cursor: pointer;
+  padding: 1rem;
+  color: black !important;
+}

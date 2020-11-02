@@ -10,7 +10,7 @@ const StudentsTable = (props) => {
   const studentList = useSelector((state) => state.studentList);
   const { loading, error, students } = studentList;
   const [boolValue, setBoolValue] = useState(false);
-  const [index, setIndex] = useState();
+  const [index, setIndex] = useState(null);
   useEffect(() => {
     dispatch(listStudent());
     setBoolValue(false);
@@ -87,7 +87,6 @@ const StudentsTable = (props) => {
   const boolHandler = (i) => {
     console.log("the value of the i", i);
     setIndex(i);
-    setBoolValue((prev) => !prev);
   };
   return (
     <>
@@ -96,18 +95,30 @@ const StudentsTable = (props) => {
       ) : error ? (
         { error }
       ) : (
-        classData.map((classValue, i) => (
-          <div className="m-5 text-dark" key={i}>
-            <h1
-              className="text-center font-weight-bolder display-4 m-0 text-warning "
-              onClick={() => boolHandler(i)}
-            >
-              {classValue.title} Class Students (
-              <span>{classValue.students.length}</span>)
-            </h1>
-            <ClassStudent data={classValue.students} screen={props.screen} />
-          </div>
-        ))
+        <>
+          <p className="errors">Single Tap: Show Data</p>
+          <p className="errors">Double Tap: Hide Data</p>
+          {classData.map((classValue, i) => (
+            <div className="m-5 text-dark viewStudent__header--main" key={i}>
+              <h1
+                className="text-center font-weight-bolder display-4 m-0  viewStudent__header"
+                onClick={() => boolHandler(i)}
+                onDoubleClick={() => setIndex(null)}
+              >
+                {classValue.title} Class Students (
+                <span>{classValue.students.length}</span>)
+              </h1>
+              {index === i ? (
+                <ClassStudent
+                  data={classValue.students}
+                  screen={props.screen}
+                />
+              ) : (
+                <></>
+              )}
+            </div>
+          ))}
+        </>
       )}
     </>
   );

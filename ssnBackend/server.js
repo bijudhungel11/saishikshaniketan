@@ -33,5 +33,5 @@ app.use("/uploads", express.static("uploads"));
 /* for creating the local storage in the  backend */
 
 app.listen(5000, () => {
-  console.log("server started at http:localhost:5000");
+  console.log("server started at http://localhost:5000");
 });
