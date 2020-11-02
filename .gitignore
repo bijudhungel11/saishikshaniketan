@@ -1,4 +1,8 @@
 
+node_modules
+sai-shiksha-niketan/debug.log
+
+
 logs
 *.log
 npm-debug.log*
@@ -11,4 +15,5 @@ node_modules
 npm-debug.log.*
 
 npm-debug.log
+
 
