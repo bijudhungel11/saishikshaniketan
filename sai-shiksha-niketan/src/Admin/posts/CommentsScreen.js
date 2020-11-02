@@ -1,13 +1,17 @@
 import React from "react";
 import "./CommentsScreen.css";
-const CommentsScreen = ({ comments }) => {
+const CommentsScreen = ({ comments, commentDisplay }) => {
   const sortedComments = comments?.sort(
     (a, b) => new Date(b.timestamps) - new Date(a.timestamps)
   );
   console.log(sortedComments);
   return (
     <>
-      <div className="comments__screen mt-4 p-4">
+      <div
+        className={`comments__screen mt-4 p-4 ${
+          commentDisplay ? "active" : ""
+        }`}
+      >
         {sortedComments?.map((comment) => (
           <div key={comment._id} className="one__comment">
             <p>

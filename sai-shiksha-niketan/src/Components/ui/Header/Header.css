@@ -144,10 +144,16 @@
   background-color: coral;
   cursor: pointer;
 }
+
+.header__item.active {
+  background-color: coral;
+}
 .header__item.sticky:hover {
   background-color: white;
 }
-
+.header__item.sticky.active {
+  background-color: #fff;
+}
 /* making the burger icon */
 .burger__icon {
   padding: 1rem;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import student from "../images/student.png";
 import profile from "../images/profile.png";
@@ -8,11 +8,23 @@ import result from "../images/resultfinal.png";
 import home from "../images/home.png";
 import post from "../images/post.png";
 const Sidebar = ({ toggle }) => {
+  const [itemActive, setItemActive] = useState(false);
+  const [index, setIndex] = useState(null);
+
+  const itemActiveHandler = (i) => {
+    setIndex(i);
+  };
   return (
     <>
       <aside className={`admin__sidebar ${toggle ? "active" : ""}`}>
         <ul className="admin__list">
-          <Link to="/home" className="admin__item admin__item--first">
+          <Link
+            to="/home"
+            className={`admin__item admin__item--first ${
+              index === 1 ? "active" : ""
+            }`}
+            onClick={() => itemActiveHandler(1)}
+          >
             <div className="img__container">
               <img
                 className="item__img"
@@ -28,7 +40,11 @@ const Sidebar = ({ toggle }) => {
               Home
             </span>
           </Link>
-          <Link to="/students" className="admin__item">
+          <Link
+            to="/students"
+            className={`admin__item ${index === 2 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(2)}
+          >
             <div className="img__container">
               <img className="item__img" src={student} alt="student" />
               <p className={`small__caption ${toggle ? "active" : ""}`}>
@@ -41,7 +57,11 @@ const Sidebar = ({ toggle }) => {
               Students
             </span>
           </Link>
-          <Link to="/teachers" className="admin__item">
+          <Link
+            to="/teachers"
+            className={`admin__item ${index === 3 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(3)}
+          >
             <div className="img__container">
               <img
                 className="item__img"
@@ -59,7 +79,11 @@ const Sidebar = ({ toggle }) => {
               Teachers
             </span>
           </Link>
-          <Link to="/manageposts" className="admin__item">
+          <Link
+            to="/manageposts"
+            className={`admin__item ${index === 4 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(4)}
+          >
             <div className="img__container">
               <img
                 className="item__img"
@@ -78,7 +102,11 @@ const Sidebar = ({ toggle }) => {
               Posts
             </span>
           </Link>
-          <Link to="/results" className="admin__item">
+          <Link
+            to="/results"
+            className={`admin__item ${index === 5 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(5)}
+          >
             <div className="img__container">
               <img
                 className="item__img"
@@ -96,7 +124,11 @@ const Sidebar = ({ toggle }) => {
               Results
             </span>
           </Link>
-          <Link to="/users" className="admin__item">
+          <Link
+            to="/users"
+            className={`admin__item ${index === 6 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(6)}
+          >
             {" "}
             <div className="img__container">
               <img
@@ -115,8 +147,11 @@ const Sidebar = ({ toggle }) => {
             </span>
           </Link>
 
-          <Link to="/users" className="admin__item">
-            {" "}
+          <Link
+            to="/users"
+            className={`admin__item ${index === 7 ? "active" : ""}`}
+            onClick={() => itemActiveHandler(7)}
+          >
             <div className="img__container">
               <img
                 className="item__img"
