@@ -3,6 +3,7 @@
 
   font-size: 2rem !important;
 }
+
 .form__data {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,13 @@
   width: 60%;
   border-radius: 5%;
 }
-
+.student__form--img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  box-shadow: -1px 2px 30px rgba(0, 0, 0, 0.4), -1px 2px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: -1rem;
+}
 .errors {
   color: red;
   font-size: 1.6rem;
@@ -167,9 +174,21 @@ label {
 .viewStudent__header--main {
   border: 2px dashed black;
   background-image: linear-gradient(to right bottom, #c471ed, #4286f4);
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.viewStudent__header--main::-webkit-scrollbar {
+  display: none;
 }
 .viewStudent__header {
   cursor: pointer;
   padding: 1rem;
   color: black !important;
+}
+.go__back {
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: bolder;
+
+  color: black;
 }

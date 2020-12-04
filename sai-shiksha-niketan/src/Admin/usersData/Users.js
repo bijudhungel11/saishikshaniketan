@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Users.css";
+
 const Users = () => {
-  return (
-    <div className="users">
-      Users
-      <div className="mini__users "></div>
-      <div className="mini__users-1 "></div>
-    </div>
-  );
+  /* const [data] = useState([
+    {
+      title: "Admin",
+      img: "./images/addUser.svg",
+      description: "It will help to see the admin data",
+      route: "/adminData",
+      btn__title: "Admin",
+      btn__class: "btn-outline-success",
+    },
+  ]); */
+  return <div className="users"></div>;
 };
 
 export default Users;

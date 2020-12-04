@@ -28,7 +28,7 @@ router.get("/createadmin", async (req, res) => {
 });
 
 /* to create the and the check the user is in the database or not */
-router.post("/signin", async (req, res) => {
+router.post("/signin", async (req, res, next) => {
   /* see that the user which is sending the data is available in the database or not */
 
   User.findOne({
@@ -40,10 +40,9 @@ router.post("/signin", async (req, res) => {
         error: "Invalid email or number",
       });
     }
-    if (savedUser.password === 60) {
+    if (savedUser.password.length === 60) {
       bcrypt.compare(req.body.password, savedUser.password).then((doMatch) => {
         if (doMatch) {
-          console.log(savedUser.password, savedUser.password.length);
           res.send({
             _id: savedUser.id,
             name: savedUser.name,
@@ -54,11 +53,11 @@ router.post("/signin", async (req, res) => {
           });
         } else {
           res.status(401).send({
-            msg: "Invalid Email or Password",
+            msg: "Invalid Password",
           });
         }
       });
-    } else {
+    } else if (savedUser.password === req.body.password) {
       res.send({
         _id: savedUser.id,
         name: savedUser.name,
@@ -66,6 +65,10 @@ router.post("/signin", async (req, res) => {
         isAdmin: savedUser.isAdmin,
         type: savedUser.type,
         token: getToken(savedUser),
+      });
+    } else {
+      res.status(401).send({
+        msg: "Invalid email or Password",
       });
     }
   });
@@ -125,28 +128,35 @@ router.post("/register", async (req, res) => {
     });
 
     if (registerUser) {
-      const user = new User({
-        name: req.body.name,
-        email: req.body.email,
-        type: req.body.userType,
-        number: req.body.number,
-        password: req.body.password,
-      });
-      const newUser = await user.save();
-
-      /* if the new user have been save then */
-      if (newUser) {
-        res.send({
-          _id: newUser.id,
-          name: newUser.name,
-          email: newUser.email,
-          type: newUser.userType,
-          isAdmin: newUser.isAdmin,
-          number: newUser.number,
+      User.findOne({ email: email }).then((registerUser) => {
+        if (registerUser) {
+          return res.status(422).send({
+            error: "Already have an account",
+          });
+        }
+        bcrypt.hash(password, 12).then((hashedpassword) => {
+          const user = new User({
+            name: req.body.name,
+            email: email,
+            type: req.body.userType,
+            number: number,
+            password: hashedpassword,
+          });
+          const newUser = user.save();
+          if (newUser) {
+            res.send({
+              _id: newUser._id,
+              name: newUser.name,
+              email: newUser.email,
+              type: newUser.userType,
+              isAdmin: newUser.isAdmin,
+              number: newUser.number,
+            });
+          } else {
+            res.status(404).send({ msg: "Invalid Teacher Data" });
+          }
         });
-      } else {
-        res.status(404).send({ msg: "Invalid Student Data" });
-      }
+      });
     }
   } else {
     return res.status(404).send({ msg: "Cannot create your account" });

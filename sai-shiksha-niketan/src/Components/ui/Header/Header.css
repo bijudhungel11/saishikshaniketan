@@ -114,9 +114,9 @@
   position: relative;
 }
 .header__item {
-  margin-top: 0.9rem;
-  padding: 1.9rem 3rem;
-
+  margin-top: 1rem;
+  padding: 0rem 3rem;
+  line-height: 3.88rem;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.836) !important;
   font-size: 2.3rem;
@@ -141,7 +141,7 @@
   }
 }
 .header__item:hover {
-  background-color: coral;
+  background-color: rgba(255, 127, 80, 0.746);
   cursor: pointer;
 }
 

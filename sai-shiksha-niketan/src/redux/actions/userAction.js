@@ -42,7 +42,11 @@ const loginUser = ({ email, number, password }) => async (
     /* console.log("the value of the userInfo from Action", userInfo); */
     Cookie.set("userInfo", JSON.stringify(data), { expires: 7 });
   } catch (error) {
-    dispatch({ type: USER_LOGIN_FAIL, payload: "Invalid USER" });
+    console.log(error);
+    dispatch({
+      type: USER_LOGIN_FAIL,
+      payload: "Invalid UserName or Password",
+    });
   }
 };
 const signupUser = (

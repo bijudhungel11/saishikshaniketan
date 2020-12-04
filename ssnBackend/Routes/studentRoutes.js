@@ -3,7 +3,7 @@ import Student from "../Models/studentModel.js";
 import { isAdmin, isAuth } from "../utils.js";
 
 const router = express.Router();
-router.put("/:id", isAuth, isAdmin, async (req, res) => {
+router.patch("/:id", isAuth, isAdmin, async (req, res) => {
   const studentId = req.params.id;
   console.log(studentId);
   const student = await Student.findById(studentId);
