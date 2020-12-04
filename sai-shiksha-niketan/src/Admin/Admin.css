@@ -14,7 +14,7 @@
   top: 0;
   position: fixed;
   text-align: center;
-  color: white;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@
   padding: 1rem;
 }
 .admin__header--brand {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 0.8rem;
   border-radius: 50%;
   letter-spacing: 2px;
