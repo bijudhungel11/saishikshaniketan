@@ -33,7 +33,7 @@ const saveStudent = (student, id) => async (dispatch, getState) => {
       console.log("the value of the data from the action", data);
       dispatch({ type: STUDENT_SAVE_SUCCESS, payload: data });
     } else {
-      const { data } = await axios.put("/api/students/" + id, student, {
+      const { data } = await axios.patch("/api/students/" + id, student, {
         headers: {
           Authorization: "Bearer" + userInfo.token,
         },

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { classStudentList } from "../../../redux/actions/studentAction";
-import ClassStudent from "../classStudentsList/ClassStudent";
+import ClassStudent from "../classStudentsList/ClassStudentTable";
 
 const ClassValue = (props) => {
   const classStudents = useSelector((state) => state.classStudents);
@@ -24,7 +24,9 @@ const ClassValue = (props) => {
         <h1>{error}</h1>
       ) : (
         <div>
-          <Link to="/classes">Go Back</Link>
+          <Link to="/classes" className="go__back">
+            Go Back
+          </Link>
 
           <ClassStudent data={students} />
         </div>

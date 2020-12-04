@@ -8,7 +8,7 @@ import "./TeacherForm.css";
 import ClassesName from "./utils/ClassesName";
 const TeacherForm = (props) => {
   const { teacherData } = props;
-  console.log(teacherData);
+  /* console.log(teacherData); */
   const { register, errors, handleSubmit, reset } = useForm();
   const teacherSave = useSelector((state) => state.teacherSave);
   const dispatch = useDispatch();

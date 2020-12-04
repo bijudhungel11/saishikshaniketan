@@ -1,10 +1,11 @@
 .admin {
-  font-family: cursive;
+  font-family: "Open Sans Condensed", sans-serif;
   background-color: #edf2f4;
   height: 100vh;
   overflow: hidden;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 .admin__header {
   width: 100%;
@@ -37,14 +38,14 @@
 .admin__sidebar {
   background-color: #14213d;
   color: white;
-  width: 20%;
+  width: 22%;
   border-right: 8px solid coral;
 
   padding: 2rem 0rem;
   transition: all 0.4s;
 }
 .admin__sidebar.active {
-  width: 9rem;
+  width: 10rem;
 }
 
 .admin__list {
@@ -173,10 +174,13 @@
   margin-left: 1rem;
 }
 .admin__item.active {
-  background-color: #a5a58d;
+  background-color: #a5a58de3;
+}
+.admin__item.active:hover {
+  background-color: #a5a58dd5;
 }
 .admin__item:hover {
-  background-color: #a5a58d;
+  background-color: #a5a58d80;
   color: black;
   cursor: pointer;
 }
@@ -192,6 +196,7 @@
   justify-content: center;
   align-items: center;
   animation: heart__beat 2s linear 2s infinite;
+  backface-visibility: hidden;
 }
 @keyframes heart__beat {
   50% {

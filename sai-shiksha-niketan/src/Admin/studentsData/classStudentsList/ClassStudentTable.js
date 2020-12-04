@@ -53,8 +53,8 @@ const ClassStudent = (props) => {
             Sorry No Student To show
           </h1>
         ) : (
-          <div className="student__data mt-5">
-            <table className="table">
+          <div className="student__data mt-5 ">
+            <table className="table table-bordered border-dark table-responsive">
               <thead className="table__header">
                 <tr>
                   <th>ID</th>

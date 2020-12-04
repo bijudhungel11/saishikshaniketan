@@ -30,6 +30,8 @@ const Home = () => {
   const teachersValue = usersValue?.filter(
     (user) => user.type.toLowerCase() === "teacher"
   );
+
+  /* console.table(usersValue); */
   const adminValue = usersValue?.filter(
     (user) => user.type.toLowerCase() === "admin"
   );
@@ -90,7 +92,7 @@ const Home = () => {
       title: "Manage Users",
       img: "./images/users.png",
       description: "Click Below to Manage student component",
-      route: "/controlStudent",
+      route: "/users",
       btn__title: "Users",
 
       btn__class: "btn-outline-dark",
@@ -99,7 +101,7 @@ const Home = () => {
       title: "Results",
       img: "./images/resultfinal.png",
       description: "Click Below to manage the results",
-      route: "/controlStudent",
+      route: "/results",
       btn__title: "Results",
 
       btn__class: "btn-outline-dark",
