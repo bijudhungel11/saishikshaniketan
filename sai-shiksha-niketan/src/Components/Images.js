@@ -3,7 +3,7 @@ import imgage1 from "../images/danceProgram.JPG";
 const data = {
   images: [
     {
-      title: "Satya Narayan Raju(Sai Baba)",
+      title: "Satya7788 Narayan Raju(Sai Baba)",
       img:
         "https://3.bp.blogspot.com/-7U8zYPLlQRg/WRyLGKqe_pI/AAAAAAAAF60/9R-WpO8VsVk_WV-gvAW0kABMU1xx5TgwQCLcB/s1600/IMG_0329.JPG",
     },
