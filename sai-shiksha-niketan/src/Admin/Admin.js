@@ -25,7 +25,7 @@ import ViewStudents from "./studentsData/viewStudent/ViewStudents";
 import DeleteStudents from "./studentsData/deleteStudent/DeleteStudents";
 import UpdateTeachersList from "./teachersData/EditTeachersList";
 //import ClassListTeacher from "./teachersData/ClassListTeacher";
-import StudentMainClasses from "./studentsData/classes/StudentMainClasses";
+import StudentMainClasses from "./studentsData/classes/StudentClassesContainer";
 import TeacherMainClasses from "./teachersData/classes/TeacherMainClasses";
 import TeacherClass from "./teachersData/classes/TeacherClass";
 import EditStudents from "./studentsData/editStudent/EditStudents";
@@ -107,12 +107,3 @@ const Admin = () => {
 };
 
 export default Admin;
-/* 
-         
-
-
-
-
-
-
- */

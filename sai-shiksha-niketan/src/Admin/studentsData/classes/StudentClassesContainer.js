@@ -1,7 +1,7 @@
 import React from "react";
 import MainClass from "./MainClass";
 
-const StudentMainClasses = () => {
+const StudentClassesContainer = () => {
   return (
     <div>
       <MainClass
@@ -24,4 +24,4 @@ const StudentMainClasses = () => {
   );
 };
 
-export default StudentMainClasses;
+export default StudentClassesContainer;

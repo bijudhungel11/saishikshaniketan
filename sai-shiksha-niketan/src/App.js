@@ -52,6 +52,7 @@ function App(props) {
 
             <Route exact path="/data" component={Data} />
           </div>
+          <div className="footer__container"></div>
         </Router>
       )}
     </>

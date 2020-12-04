@@ -11,13 +11,16 @@ const Services = (props) => {
     history.push("/achievements");
   };
   return (
-    <div className="services">
-      <h1>Hello from the services pages</h1>
+    <>
+      <div className="services">
+        <h1>Hello from the services pages</h1>
 
-      <button onClick={handleClick} className="btn btn-success btn-lg">
-        Achievements
-      </button>
-    </div>
+        <button onClick={handleClick} className="btn btn-success btn-lg">
+          Achievements
+        </button>
+      </div>
+      <div className="services-container">Hello</div>
+    </>
   );
 };
 

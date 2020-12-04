@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listStudent } from "../../redux/actions/studentAction";
-import ClassStudent from "./classStudentsList/ClassStudent";
+import ClassStudent from "./classStudentsList/ClassStudentTable";
 
 const StudentsTable = (props) => {
   const dispatch = useDispatch();
@@ -85,7 +85,6 @@ const StudentsTable = (props) => {
   ];
 
   const boolHandler = (i) => {
-    console.log("the value of the i", i);
     setIndex(i);
   };
   return (

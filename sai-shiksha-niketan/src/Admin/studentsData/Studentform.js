@@ -30,7 +30,6 @@ const Studentform = (props) => {
   } = useForm();
   const { studentData } = props;
 
-  console.log("the value of the student", studentData);
   /* student store */
   const studentSave = useSelector((state) => state.studentSave);
   const { loading, success, error } = studentSave;
@@ -88,8 +87,13 @@ const Studentform = (props) => {
       </button>
       {createButton ? (
         <div className="form__data">
-          <div>
-            <h1 className="form__heading my-4">{props.title}</h1>
+          <div className="form__data--heading w-100 text-center">
+            <h1 className="form__heading">{props.title}</h1>
+            <img
+              src="../../images/student.png"
+              alt="studentform"
+              className="student__form--img"
+            />
           </div>
           <form className="form" onSubmit={handleSubmit(onSubmitHandler)}>
             <div className="form__container">
