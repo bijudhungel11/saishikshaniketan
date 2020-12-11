@@ -47,7 +47,7 @@ const Admin = () => {
         <Header toggle={toggle} toggleHandler={toggleHandler} />
 
         <div className="main__container">
-          <Sidebar toggle={toggle} />
+          <Sidebar toggle={toggle} toggleHandler={toggleHandler} />
           <div className="main">
             <Switch>
               <Route exact path="/" component={Home}></Route>

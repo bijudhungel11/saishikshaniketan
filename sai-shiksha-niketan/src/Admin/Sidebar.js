@@ -7,8 +7,7 @@ import users from "../images/users.png";
 import result from "../images/resultfinal.png";
 import home from "../images/home.png";
 import post from "../images/post.png";
-const Sidebar = ({ toggle }) => {
-  const [itemActive, setItemActive] = useState(false);
+const Sidebar = ({ toggle, toggleHandler }) => {
   const [index, setIndex] = useState(null);
 
   const itemActiveHandler = (i) => {
@@ -170,6 +169,10 @@ const Sidebar = ({ toggle }) => {
           </Link>
         </ul>
       </aside>
+      <div
+        className={`admin__sidebar--overlay ${toggle ? "" : "active"}`}
+        onClick={toggleHandler}
+      ></div>
     </>
   );
 };
