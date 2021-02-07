@@ -44,11 +44,13 @@
   flex: 1;
 }
 .post__img {
-  height: 40rem;
+  height: 47rem;
 }
 .post__img img {
   width: 100%;
   height: 100%;
+  object-fit: cover !important;
+  object-position: 0 0;
 }
 .post__description {
   padding: 1rem;

@@ -6,14 +6,15 @@
 .main__card {
   width: 25rem;
   background-color: rgb(255, 255, 255);
-  box-shadow: -2px 4px 16px rgba(0, 0, 0, 0.7), -3px 1px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: -1px 4px 15px -6px rgba(0, 0, 0, 0.6);
   margin: 2rem 0.5rem;
   transition: 0.4s all;
 }
 .main__card:hover {
-  box-shadow: -2px 4px 20px rgba(0, 0, 0, 0.7), -3px 3px 12px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: #f4be3631;
 }
 .sub__card {
   display: flex;

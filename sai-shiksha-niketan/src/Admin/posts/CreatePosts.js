@@ -65,7 +65,7 @@ const CreatePosts = ({ title, view, postData, id }) => {
     }
   }, [success]);
 
-  console.log(postData);
+  /* console.log(postData); */
   return (
     <div className="createpost__form">
       <form className="post__form" onSubmit={handleSubmit(onSubmitHandler)}>

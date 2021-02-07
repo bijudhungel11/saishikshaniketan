@@ -16,7 +16,10 @@
 }
 .viewPost__img {
   width: 100%;
+  object-fit: cover;
+  height: 60rem;
   border-radius: 1.4rem;
+  object-position: 0 0;
 }
 .viewPost__description {
   padding: 2rem;
