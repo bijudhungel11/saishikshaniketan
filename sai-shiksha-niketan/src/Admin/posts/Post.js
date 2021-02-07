@@ -6,8 +6,8 @@ import DeleteOverlay from "./DeleteOverlay";
 import "./Post.css";
 
 const Post = ({ id, heading, description, image, user, time, view }) => {
-  console.log(image);
-  console.log(id);
+  /* console.log(image);
+  console.log(id); */
   const [overlay, setOverlay] = useState(false);
   const dispatch = useDispatch();
   const deleteHandler = (id) => {
@@ -25,7 +25,7 @@ const Post = ({ id, heading, description, image, user, time, view }) => {
   return (
     <div className="post__container ">
       <div className="post__user">
-        <img src={`http://localhost:5000/uploads/${image}`} alt="user" />
+        <img src={`${image}`} alt="teacher" />
         <strong>
           <span>{user}</span>
           <span>{time}</span>
@@ -35,7 +35,7 @@ const Post = ({ id, heading, description, image, user, time, view }) => {
         <h1 className="text-center">{heading}</h1>
       </div>
       <div className="post__img">
-        <img src={`http://localhost:5000/uploads/${image}`} alt="teacher" />
+        <img src={`${image}`} alt="teacher" />
       </div>
       {
         <div className="post__description">

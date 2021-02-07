@@ -77,7 +77,7 @@ const ViewPost = () => {
               <div className="viewPost__img-container">
                 {post?.image ? (
                   <img
-                    src={`http://localhost:5000/uploads/${post?.image}`}
+                    src={`${post?.image}`}
                     alt="img"
                     className="viewPost__img"
                   />

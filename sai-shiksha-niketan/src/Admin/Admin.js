@@ -34,6 +34,11 @@ import CreatePosts from "./posts/CreatePosts";
 import ViewPosts from "./posts/ViewPosts";
 import ViewPost from "./posts/ViewPost";
 import EditPost from "./posts/EditPost";
+import CreateResult from "./resultsData/CreateResult";
+import ViewResults from "./resultsData/ViewResults";
+import UpdateResults from "./resultsData/UpdateResults";
+import { DeleteResults } from "./resultsData/DeleteResults";
+import Profile from "./Profile";
 
 const Admin = () => {
   const [toggle, setToggle] = useState(true);
@@ -41,6 +46,7 @@ const Admin = () => {
   const toggleHandler = () => {
     setToggle(!toggle);
   };
+
   return (
     <Router>
       <div className="admin">
@@ -55,6 +61,7 @@ const Admin = () => {
               <Route exact path="/results" component={Results} />
               <Route exact path="/manageposts" component={ManagePosts} />
               <Route exact path="/users" component={Users} />
+              <Route exact path="/profile" component={Profile} />
               {/* Student parts */}
               <Route exact path="/createStudent" component={Students} />
               <Route exact path="/students" component={ManageStudent} />
@@ -97,6 +104,12 @@ const Admin = () => {
               <Route exact path="/viewposts/:id" component={ViewPost} />
               <Route exact path="/editPost/:id" component={EditPost} />
               {/* end */}
+              {/* Results */}
+              <Route exact path="/createResults" component={CreateResult} />
+              <Route exact path="/viewResults" component={ViewResults} />
+              <Route exact path="/updateResults" component={UpdateResults} />
+              <Route exact path="/controlResults" component={DeleteResults} />
+              {/* End */}
               <Route component={PageNotFound} />
             </Switch>
           </div>
